@@ -3,6 +3,7 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const app=express();
+const port = process.env.PORT || 4000;
 let items=[];
 app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}));
@@ -27,6 +28,6 @@ app.post("/",(req,resp)=>{
         
         
         })
-app.listen(3000,()=>{
-        console.log("server is running on port 3000");
-});
+        app.listen(port, () => {
+                console.log("Started at 4000");
+         });
